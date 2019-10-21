@@ -1,0 +1,1 @@
+const wm = new WeakMap();

@@ -1,0 +1,17 @@
+let div = document.getElementById("div1");
+let iterator = document.createNodeIterator(div, NodeFilter.SHOW_ELEMENT, 
+                                           null, false);
+           
+let node = iterator.nextNode();
+while (node !== null) {
+  console.log(node.tagName);     // output the tag name
+  node = iterator.nextNode();
+}
+The first call to nextNode() in this example returns the <p> element. Because nextNode() returns null when it has reached the end of the DOM subtree, a while loop checks to see when null has been returned as it calls nextNode() each time through. When this code is executed, alerts are displayed with the following tag names:
+DIV
+P
+B
+UL
+LI
+LI
+LI

@@ -1,0 +1,1 @@
+div.innerText = div.innerText;

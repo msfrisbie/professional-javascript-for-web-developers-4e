@@ -1,0 +1,18 @@
+// Page HTML:
+//
+// <div id="foo"></div>
+// <template id="bar">
+//   <script>console.log('Template script executed');</script>
+// </template>
+
+const fooElement = document.querySelector('#foo');
+const barTemplate = document.querySelector('#bar');
+const barFragment = barTemplate.content;
+
+console.log('About to add template');
+fooElement.appendChild(barFragment);
+console.log('Added template');
+
+// About to add template
+// Template script executed
+// Added template

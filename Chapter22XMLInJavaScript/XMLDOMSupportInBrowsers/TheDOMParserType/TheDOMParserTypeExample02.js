@@ -1,0 +1,1 @@
+<parsererror xmlns="http:// www.mozilla.org/newlayout/xml/parsererror.xml">XML Parsing Error: no element found Location: file:// /I:/My%20Writing/My%20Books/Professional%20JavaScript/Second%20Edition/Examples/Ch15/DOMParserExample2.js Line Number 1, Column 7:<sourcetext>&lt;root&gt; ------^</sourcetext></parsererror>

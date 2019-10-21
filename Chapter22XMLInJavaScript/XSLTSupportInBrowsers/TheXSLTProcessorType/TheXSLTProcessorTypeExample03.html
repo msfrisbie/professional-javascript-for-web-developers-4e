@@ -1,0 +1,4 @@
+let fragment = processor.transformToFragment(xmldom, document);
+let div = document.getElementById("divResult");
+div.appendChild(fragment);
+Here, the processor creates a fragment owned by the document object. This enables the fragment to be added to a <div> element that exists in the page.

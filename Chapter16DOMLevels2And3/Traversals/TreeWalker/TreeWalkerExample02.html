@@ -1,0 +1,11 @@
+let div = document.getElementById("div1");
+let walker = document.createTreeWalker(div, NodeFilter.SHOW_ELEMENT, null, false);
+           
+walker.firstChild();   // go to <p>
+walker.nextSibling();  // go to <ul>
+           
+let node = walker.firstChild();  // go to first <li>
+while (node !== null) {
+  console.log(node.tagName);
+  node = walker.nextSibling();
+}

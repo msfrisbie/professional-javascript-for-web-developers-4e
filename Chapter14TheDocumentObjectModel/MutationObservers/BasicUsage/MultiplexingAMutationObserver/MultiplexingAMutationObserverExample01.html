@@ -1,0 +1,19 @@
+let observer = new MutationObserver(
+(mutationRecords) => console.log(mutationRecords.map((x) => x.target)));
+
+// Append two children to body
+let childA = document.createElement('div'),
+    childB = document.createElement('span');
+document.body.appendChild(childA);
+document.body.appendChild(childB);
+
+// Observe both children
+observer.observe(childA, { attributes: true });
+observer.observe(childB, { attributes: true });
+
+// Perform mutation on each child
+childA.setAttribute('foo', 'bar');
+childB.setAttribute('foo', 'bar');
+
+// [<div>, <span>]
+ReusingMutationObserverExample01.js

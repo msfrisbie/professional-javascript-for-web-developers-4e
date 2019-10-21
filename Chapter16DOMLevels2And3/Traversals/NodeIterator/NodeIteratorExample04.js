@@ -1,0 +1,3 @@
+let iterator = document.createNodeIterator(document, NodeFilter.SHOW_ALL, 
+                                           null, false);
+The two primary methods of NodeIterator are nextNode() and previousNode(). The nextNode() method moves one step forward in the depth-first traversal of the DOM subtree, and previousNode() moves one step backward in the traversal. When the NodeIterator is first created, an internal pointer points to the root, so the first call to nextNode() returns the root. When the traversal has reached the last node in the DOM subtree, nextNode() returns null. The previousNode() method works in a similar way. When the traversal has reached the last node in the DOM subtree, after previousNode() has returned the root of the traversal, it will return null.

@@ -1,0 +1,8 @@
+console.log(new Blob(['foo']));  
+// Blob {size: 3, type: ""}
+
+console.log(new Blob(['{"a": "b"}'], { type: 'application/json' }));
+// {size: 10, type: "application/json"}
+
+console.log(new Blob(['<p>Foo</p>', '<p>Bar</p>'], { type: 'text/html' }));
+// {size: 20, type: "text/html"}

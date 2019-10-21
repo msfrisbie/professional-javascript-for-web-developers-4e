@@ -1,0 +1,17 @@
+for (let color of ['red', 'green', 'blue']) {
+  const divElement = document.createElement('div');
+  divElement.innerText = `Make me ${color}`;
+  document.body.appendChild(divElement)
+  
+  divElement
+      .attachShadow({ mode: 'open' })
+      .innerHTML = `
+      <p><slot></slot></p>
+      
+      <style>
+        p {
+          color: ${color};
+        }
+      </style>
+      `;
+}

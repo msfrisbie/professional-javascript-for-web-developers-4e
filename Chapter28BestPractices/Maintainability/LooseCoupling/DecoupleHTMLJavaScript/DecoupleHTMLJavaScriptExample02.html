@@ -1,0 +1,8 @@
+// tight coupling of HTML to JavaScript
+function insertMessage(msg) {
+  let container = document.getElementById("container");
+  container.innerHTML = `<div class="msg">
+    <p class="post">${msg}</p>
+    <p><em>Latest message above.</em></p>
+  </div>`;
+}

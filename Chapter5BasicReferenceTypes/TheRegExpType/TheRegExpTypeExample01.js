@@ -1,0 +1,1 @@
+let expression = /pattern/flags;

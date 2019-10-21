@@ -1,0 +1,14 @@
+<div id="myDiv">
+  <input type="button" value="Click Me" id="myBtn">
+</div>
+<script type="text/javascript">
+  let btn = document.getElementById("myBtn");
+  btn.onclick = function() {
+      
+    // do something
+      
+    btn.onclick = null;   // remove event handler
+      
+    document.getElementById("myDiv").innerHTML = "Processing..."; 
+  };
+</script>

@@ -1,0 +1,1 @@
+let allElements = document.getElementsByTagName("*");

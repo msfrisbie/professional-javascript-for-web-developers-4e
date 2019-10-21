@@ -1,0 +1,1 @@
+const textDecoder = new TextDecoder();

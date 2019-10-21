@@ -1,0 +1,1 @@
+myDiv.style.removeProperty("border");

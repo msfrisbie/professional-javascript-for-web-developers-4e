@@ -1,0 +1,14 @@
+<script type="x-webgl/x-vertex-shader" id="vertexShader">
+attribute vec2 aVertexPosition;
+ 
+void main() {
+  gl_Position = vec4(aVertexPosition, 0.0, 1.0);
+}
+</script>
+<script type="x-webgl/x-fragment-shader" id="fragmentShader">
+uniform vec4 uColor;
+            
+void main() {
+  gl_FragColor = uColor;
+}
+</script>

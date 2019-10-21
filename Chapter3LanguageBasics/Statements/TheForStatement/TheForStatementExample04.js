@@ -1,0 +1,3 @@
+for (;;) {  // infinite loop
+  doSomething();
+}

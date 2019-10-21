@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Computed Styles Example</title>
+  <style type="text/css">
+    #myDiv {
+      background-color: blue;
+      width: 100px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div id="myDiv" style="background-color: red; border: 1px solid black"></div>
+</body>
+</html>
+In this example, the <div> element has styles applied to it both from an inline style sheet (the <style> element) and from the style attribute. The style object has values for backgroundColor and border, but nothing for width and height, which are applied through a style sheet rule. The following code retrieves the computed style for the element:
+let myDiv = document.getElementById("myDiv");
+let computedStyle = document.defaultView.getComputedStyle(myDiv, null);
+           
+console.log(computedStyle.backgroundColor);  // "red"
+console.log(computedStyle.width);            // "100px"
+console.log(computedStyle.height);           // "200px"
+console.log(computedStyle.border);           // "1px solid black" in some browsers

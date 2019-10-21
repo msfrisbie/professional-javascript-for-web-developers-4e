@@ -1,0 +1,29 @@
+<script>
+  function tabForward(event){            
+    let target = event.target;
+
+    if (target.value.length == target.maxLength){
+      let form = target.form;
+
+      for (let i = 0, len = form.elements.length; i < len; i++) {
+        if (form.elements[i] == target) {
+          if (form.elements[i+1]) {
+            form.elements[i+1].focus();
+          }
+          return;
+        }
+      }
+    }
+  }
+         
+  let inputIds = ["txtTel1", "txtTel2", "txtTel3"];
+  
+  for (let id of inputIds) {
+    let textbox = document.getElementById(id);
+    textbox.addEventListener("keyup", tabForward);
+  }
+  
+  let textbox1 = document.getElementById("txtTel1");
+  let textbox2 = document.getElementById("txtTel2");
+  let textbox3 = document.getElementById("txtTel3");
+</script>

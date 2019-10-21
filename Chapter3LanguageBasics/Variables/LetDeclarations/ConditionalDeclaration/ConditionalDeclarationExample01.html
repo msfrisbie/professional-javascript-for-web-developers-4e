@@ -1,0 +1,16 @@
+<script>
+  var name = 'Nicholas'; 
+  let age = 26;
+</script>
+
+<script>
+  // Suppose this script is unsure about what has already been declared in the page. 
+  // It will assume variables have not been declared.
+
+  var name = 'Matt';
+  // No problems here, since this will be handled as a single hoisted declaration.
+  // There is no need to check if it was previously declared.
+
+  let age = 36;
+  // This will throw an error when 'age' has already been declared. 
+</script> 

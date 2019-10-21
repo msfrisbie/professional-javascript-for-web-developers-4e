@@ -1,0 +1,7 @@
+document.body.innerHTML = `
+<div>
+  <p>Foo</p>
+</div>
+`;
+
+setTimeout(() => document.querySelector('div').attachShadow({ mode: 'open' }), 1000);

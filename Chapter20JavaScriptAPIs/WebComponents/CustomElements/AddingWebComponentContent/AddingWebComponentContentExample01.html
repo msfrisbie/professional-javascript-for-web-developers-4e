@@ -1,0 +1,23 @@
+class FooElement extends HTMLElement {
+  constructor() {
+    super();
+    
+    // 'this' refers to the web component node
+    this.attachShadow({ mode: 'open' });
+    
+    this.shadowRoot.innerHTML = `
+      <p>I'm inside a custom element!</p>
+    `;
+  }
+}
+customElements.define('x-foo', FooElement);
+
+document.body.innerHTML += `<x-foo></x-foo`;
+
+// Resulting DOM:
+// <body>
+// <x-foo>
+//   #shadow-root (open)
+//     <p>I'm inside a custom element!</p>
+// <x-foo>
+// </body>

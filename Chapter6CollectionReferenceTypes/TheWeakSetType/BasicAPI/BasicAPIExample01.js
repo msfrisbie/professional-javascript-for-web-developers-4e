@@ -1,0 +1,1 @@
+const ws = new WeakSet();

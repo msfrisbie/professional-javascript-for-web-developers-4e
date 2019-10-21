@@ -1,0 +1,16 @@
+for (let color of ['red', 'green', 'blue']) {
+  const div = document.createElement('div');
+  const shadowDOM = div.attachShadow({ mode: 'open' });
+  
+  document.body.appendChild(div);
+  
+  shadowDOM.innerHTML = `
+    <p>Make me ${color}</p>
+    
+    <style>
+    p {
+      color: ${color};
+    }
+    </style>
+  `;
+}

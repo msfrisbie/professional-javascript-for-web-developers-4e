@@ -1,0 +1,3 @@
+(function() {
+  // block code here
+})();

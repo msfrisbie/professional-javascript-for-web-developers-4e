@@ -1,0 +1,11 @@
+document.body.innerHTML = `
+<div id="foo">
+  <p>Foo</p>
+</div>
+`;
+
+document.querySelector('div')
+    .attachShadow({ mode: 'open' })
+    .innerHTML = `<div id="bar">
+                    <slot></slot>
+                  <div>`

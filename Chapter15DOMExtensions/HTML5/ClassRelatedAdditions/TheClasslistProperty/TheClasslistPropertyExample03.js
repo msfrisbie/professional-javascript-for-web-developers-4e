@@ -1,0 +1,1 @@
+div.classList.remove("user");

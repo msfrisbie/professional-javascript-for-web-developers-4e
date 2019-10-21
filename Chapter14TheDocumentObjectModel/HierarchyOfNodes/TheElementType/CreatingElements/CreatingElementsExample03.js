@@ -1,0 +1,1 @@
+document.body.appendChild(div);

@@ -1,0 +1,1 @@
+let myImage = images["myImage"];

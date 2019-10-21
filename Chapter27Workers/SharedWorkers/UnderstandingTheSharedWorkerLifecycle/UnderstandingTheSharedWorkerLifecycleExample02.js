@@ -1,0 +1,1 @@
+new SharedWorker('./sharedWorker.js');
