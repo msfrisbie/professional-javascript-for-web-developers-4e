@@ -1,5 +1,11 @@
 # Professional JavaScript for Web Developers Errata
-### Last updated: Jan 21, 2010
+### Last updated: Feb 25, 2010
+
+## Introduction
+
+The text should read:
+
+> Firefox has Gecko/**SpiderMonkey**
 
 ## Page 33
 
@@ -82,6 +88,17 @@ for (const el of [2,4,6,8]) {
 }
 ```
 
+## Page 108
+
+The text states:
+
+> Neither the global context nor the local context of `swapColors()` has access to `tempColor`.
+
+This should read:
+
+> Neither the global context nor the local context of **`changeColors()`** has access to `tempColor`.
+
+
 ## Page 133
 
 The text incorrectly states that regular expression literals will reuse a `RegExp` instance. Although the description indicates the following code will sometimes return false, it returns `true` 10 times:
@@ -109,6 +126,96 @@ As such, this code snippet used to be correct, but is no longer. The paragraph b
 This statement is correct.
 
 
+## Page 161
 
+The text demonstrates an example of assigning variables to the global object. It should be as follows:
 
+<pre><code>
+<b>var</b> color = "red";
 
+function sayColor() {
+  console.log(window.color);
+}
+
+window.sayColor();  // red
+</pre></code>
+
+## Page 163
+
+The text should say the following:
+
+The `Math.random()` method returns a random number between 0 and 1, **including 0 but not including 1.**
+
+## Page 178
+
+The text states:
+
+> `fill()` silenty ignores ranges that exceed the boundaries of the array,
+
+It should state:
+
+> `copyWithin()` silenty ignores ranges that exceed the boundaries of the array,
+
+## Page 183
+
+The text condenses a long-form sort into a sequence of ternary operators. It should read:
+
+<pre><code>
+let values = [0, 1, 5, 10, 15];
+values.sort((a, b) => a < b ? <b>1 :</b> a > b ? -1 : 0);
+alert(values);  // [15,10,5,1,0]
+</pre></code>
+
+## Page 202
+
+The text should read:
+
+> Unlike an `Object`, which can only use numbers, strings, **or Symbols** as keys, 
+
+## Page 213
+
+The collection types code example should read:
+
+<pre><code>
+const s = new Set();
+
+const objVal = {},
+      arrVal = [];
+      
+<b>s.add(objVal)
+ .add(arrVal);</b>
+ 
+ objVal.bar = "bar";
+ arrVal.push("bar");
+ 
+ alert(s.has(objVal));  // true
+ alert(s.has(arrVal));  // true
+</pre></code>
+
+## Page 215
+
+The code example should read:
+
+<pre><code>
+const s1 = new Set(["val1"]);
+
+// String primitive as value is unaltered
+for (let value of <b>s1</b>.values()) {
+  value = "newVal";
+  alert(value);          // newVal
+  alert(<b>s1</b>.has("val1"));  // true
+}
+
+const valObj = {id: 1};
+
+const s2 = new Set([valObj]);
+
+// Value inside property is altered, but the object still exists
+// inside the set
+for (let value of <b>s2</b>.values()) {
+  value.id = "newVal";
+  alert(value);           // {id: "newVal"}
+  alert(<b>s2</b>.has(valObj));  // true
+}
+alert(valObj);            // <b>{id: "newVal"}</b>
+</pre></code>
