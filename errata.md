@@ -1,6 +1,8 @@
 # Professional JavaScript for Web Developers Errata
 ### Last updated: Feb 25, 2010
 
+**Please note: Wiley actively updates their print and electronic book copies to include these corrections.**
+
 ## Introduction
 
 The text should read:
