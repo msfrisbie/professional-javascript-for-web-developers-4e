@@ -1,5 +1,5 @@
 # Professional JavaScript for Web Developers Errata
-### Last updated: Feb 25, 2010
+### Last updated: Feb 27, 2010
 
 **Please note: Wiley actively updates their print and electronic book copies to include these corrections.**
 
@@ -221,3 +221,13 @@ for (let value of <b>s2</b>.values()) {
 }
 alert(valObj);            // <b>{id: "newVal"}</b>
 </pre></code>
+
+## Page 395
+
+The final line of the example reads:
+
+<pre>// Success: 12 (printed after roughly 1000ms)</pre>
+
+It should read:
+
+<pre>// Success: 12 (printed after roughly <b>2000ms</b>)</pre>
