@@ -1,5 +1,5 @@
 # Professional JavaScript for Web Developers Errata
-### Last updated: Feb 27, 2010
+### Last updated: Apr 7, 2020
 
 **Please note: Wiley actively updates their print and electronic book copies to include these corrections.**
 
@@ -222,6 +222,76 @@ for (let value of <b>s2</b>.values()) {
 alert(valObj);            // <b>{id: "newVal"}</b>
 </pre></code>
 
+## Page 242
+
+The first code snippet instantiates an unused variable. It should read:
+
+<pre><code>
+function* range(start, end) {
+  while(end > start) {
+    yield start++;
+  }
+}
+
+...
+</code></pre>
+
+## Page 276
+
+The code snippet at the top of the page should read:
+
+<pre><code>
+console.log(person1 !== Person);            // true
+console.log(person1 !== Person.prototype);  // true
+console.log(Person.prototype !== <b>Person</b>);   // true
+</code></pre>
+
+## Page 313
+
+The introductory paragraph to the super() section should read:
+
+> Derived class methods have a reference to their prototype via the `super` keyword. <b>This is only available for derived classes inside the constructor, instance methods, and static methods.</b> `super` is used inside the constructor to control when to invoke the parent class constructor.
+
+## Page 325
+
+The hasOwnProperty() lines should return `true`. Also, the `instanceof` assertion inside the code snippet is not correct and should be removed. The snippet should read:
+
+<pre><code>
+// The hasOwnProperty() method is effectively applied
+// to the target in both cases.
+console.log(target.hasOwnProperty('id'));  <b>// true</b>
+console.log(proxy.hasOwnProperty('id'));   <b>// true</b>
+
+// Strict object equality can still be used to
+...
+</code></pre>
+
+## Page 330
+
+The final code snippet should use `Reflect.defineProperty`:
+
+<pre><code>
+// Refactored code
+
+const o = {};
+
+if(<b>Reflect.defineProperty</b>(o, 'foo', <b>{value: 'bar'}</b>)) {
+  console.log('success');
+} else {
+  console.log('failure');
+}
+</code></pre>
+
+## Page 337
+
+The `getOwnPropertyDescriptior()` intercepted operations should be:
+
+<pre><code>
+Object.getOwnPropertyDescriptor(proxy, property)
+
+Reflect.getOwnPropertyDescriptor(proxy, property)
+</code></pre>
+
 ## Page 395
 
 The final line of the example reads:
@@ -231,3 +301,5 @@ The final line of the example reads:
 It should read:
 
 <pre>// Success: 12 (printed after roughly <b>2000ms</b>)</pre>
+
+
