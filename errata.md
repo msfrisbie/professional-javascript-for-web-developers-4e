@@ -292,6 +292,23 @@ Object.getOwnPropertyDescriptor(proxy, property)
 Reflect.getOwnPropertyDescriptor(proxy, property)
 </code></pre>
 
+## Page 345
+
+The "Property Validation" code example should read as follows:
+
+<pre><code>
+const target = {
+  onlyNumbersGoHere: 0
+};
+
+const proxy = new Proxy(target, {
+  set(target, property, value) {
+    <b>if (typeof value !== 'number') {</b>
+      return false;
+    } else {
+...
+</code></pre>
+
 ## Page 395
 
 The final line of the example reads:
@@ -302,4 +319,6 @@ It should read:
 
 <pre>// Success: 12 (printed after roughly <b>2000ms</b>)</pre>
 
+## Page 429
 
+The demonstrated behavior in the example on this page changed with browser adoption of the microtask queue. See https://github.com/msfrisbie/professional-javascript-for-web-developers/issues/7 for details.
