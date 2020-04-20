@@ -1,5 +1,5 @@
 # Professional JavaScript for Web Developers Errata
-### Last updated: Apr 7, 2020
+### Last updated: Apr 20, 2020
 
 **Please note: Wiley actively updates their print and electronic book copies to include these corrections.**
 
@@ -322,3 +322,61 @@ It should read:
 ## Page 429
 
 The demonstrated behavior in the example on this page changed with browser adoption of the microtask queue. See https://github.com/msfrisbie/professional-javascript-for-web-developers/issues/7 for details.
+
+## Page 522
+
+The text assignment should not use quotes:
+
+<pre><code>
+var script = document.createElement("script");
+var code = "function sayHi(){alert('hi');}"; 
+try {
+  script.appendChild(document.createTextNode(code));
+} 
+catch (ex){
+  <b>script.text = code;</b>
+}
+document.body.appendChild(script);
+</code></pre>
+
+## Page 557
+
+The text bullet should read:
+
+> If an object argument is supplied, the user can specify how the scroll behaves. The `behavior` property specifies how the scroll should occur: `auto`, `instant`, or `smooth`. The `block` and `inline` properties specify how the element will be vertically aligned vertically and horizontally (respectively). These accept the values`start`, `center`, `end`, or `nearest`.
+
+In the code, the `block` option should contain the `'start'`, not `true`.
+
+<pre><code>
+// Ensures this element is visible
+document.forms[0].scrollIntoView();
+
+// These behave identically
+document.forms[0].scrollIntoView(true);
+<b>document.forms[0].scrollIntoView({block: 'start'});</b>
+
+// This attempts to scroll the element smoothly into view:
+<b>document.forms[0].scrollIntoView({behavior: 'smooth', block: 'start'});</b>
+</code></pre>
+
+## Page 646
+
+The second handler should have an `event` parameter:
+
+<pre><code>
+(function() {
+  let showCount = 0;
+  
+  window.addEventListener("load", () => {
+    console.log("Load fired");
+  });
+  
+  window.addEventListener("pageshow", <b>(event) => {</b>
+    showCount++;
+    console.log(
+      `Show has been fired ${showCount} times.`,
+      `Persisted? ${event.persisted}`
+    );
+  });
+})();
+</code></pre>
