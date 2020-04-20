@@ -359,6 +359,22 @@ document.forms[0].scrollIntoView(true);
 <b>document.forms[0].scrollIntoView({behavior: 'smooth', block: 'start'});</b>
 </code></pre>
 
+## Page 645
+
+The examples uses `arguments.callee`, which is not available in arrow functions. For this to work, it should use a standard `function`:
+
+<pre><code>
+document.addEventListener("readystatechange", <b>function(event) {</b>
+  if (
+    document.readyState == "interactive" ||
+    document.readyState == "complete"
+  ) {
+    document.removeEventListener("readystatechange", arguments.callee);
+    console.log("Content loaded");
+  }
+});
+</code></pre>
+
 ## Page 646
 
 The second handler should have an `event` parameter:
