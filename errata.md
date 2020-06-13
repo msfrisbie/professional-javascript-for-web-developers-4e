@@ -1,5 +1,5 @@
 # Professional JavaScript for Web Developers Errata
-### Last updated: Apr 20, 2020
+### Last updated: June 13, 2020
 
 **Please note: Wiley actively updates their print and electronic book copies to include these corrections.**
 
@@ -309,6 +309,12 @@ const proxy = new Proxy(target, {
 ...
 </code></pre>
 
+## Page 380
+
+The text should read:
+
+> Here, a global variable called <b>identity</b> is created along with an object that also contains a property called <b>identity</b>. the object contains a method, <b>getIdentityFunc()</b>, ...
+
 ## Page 395
 
 The final line of the example reads:
@@ -319,9 +325,74 @@ It should read:
 
 <pre>// Success: 12 (printed after roughly <b>2000ms</b>)</pre>
 
+## Chapter 11 (Page 391-436)
+
+As described in https://github.com/msfrisbie/professional-javascript-for-web-developers/issues/7, this chapter was written before the introduction of the microtask queue, which alters the execution behavior of some of the examples in this chapter. The async and promise syntax and APIs as demonstrated have not changed.
+
+## Page 410
+
+The text should read:
+
+> The <b>synchronous/asynchronous</b> is demonstrated in the following example:
+
+## Page 427
+
+For the same reason as described in https://github.com/msfrisbie/professional-javascript-for-web-developers/issues/7, the print order of the example changes.
+
+The text should read:
+
+> ...where three function are invoked in order but their outputs print <b>out of order</b>;
+
+The code example should be:
+
+<pre><code>
+...
+
+foo();
+bar();
+baz()
+<b>
+// baz
+// foo
+// bar
+</b>
+</code></pre>
+
 ## Page 429
 
 The demonstrated behavior in the example on this page changed with browser adoption of the microtask queue. See https://github.com/msfrisbie/professional-javascript-for-web-developers/issues/7 for details.
+
+## Page 440
+
+The text should read:
+
+> In this way, a 12px font in <b><i>logical</i> pixels (or CSS pixels)</b> would really be a 36px font in <b><i>physical</i> pixels</b>.
+
+## Page 441
+
+The text should read:
+
+> `window.scroll(x, y)` will scroll the viewport to an <b>absolute offset. (`window.scrollTo(x, y)` behaves identically). `window.scrollBy(x, y)` scrolls the viewport by a relative amount</b>.
+
+## Page 453
+
+The last line of the code example should read:
+
+`<b>location</b>.port = 8080;`
+
+## Page 461
+
+The text should read:
+
+> For the first page lodaed in to a window or tab, `history.length` is equal to <b>1</b>.
+
+In the code example:
+
+<pre><code>
+if (history.length === 1) {
+  // this is the first page in the user's window
+}
+</code></pre>
 
 ## Page 522
 
