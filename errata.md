@@ -378,7 +378,7 @@ The text should read:
 
 The last line of the code example should read:
 
-`<b>location</b>.port = 8080;`
+<pre><code><b>location</b>.port = 8080;</code></pre>
 
 ## Page 461
 
