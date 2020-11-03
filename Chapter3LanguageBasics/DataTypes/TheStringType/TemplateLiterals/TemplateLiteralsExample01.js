@@ -10,4 +10,4 @@ console.log(myMultiLineTemplateLiteral);
 // first line
 // second line
 
-console.log(myMultiLineString === myMultiLinetemplateLiteral);   // true
+console.log(myMultiLineString === myMultiLineTemplateLiteral);   // true
