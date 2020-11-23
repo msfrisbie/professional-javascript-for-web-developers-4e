@@ -1,4 +1,4 @@
-# Source code for Professional JavaScript for Web Developers 4th Edition
+# Professional JavaScript for Web Developers 4th Edition Source Code
 
 Available for purchase:
 * English: https://www.amazon.com/Professional-JavaScript-Developers-Matt-Frisbie/dp/1119366445/
