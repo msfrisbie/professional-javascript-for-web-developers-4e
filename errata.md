@@ -1,5 +1,5 @@
 # Professional JavaScript for Web Developers Errata
-### Last updated: June 13, 2020
+### Last updated: November 23, 2020
 
 **Please note: Wiley actively updates their print and electronic book copies to include these corrections.**
 
@@ -394,6 +394,16 @@ if (history.length === 1) {
 }
 </code></pre>
 
+## Page 469
+
+The `window.chrome.webstore` property is deprecated. A modernized Chrome browser detection would be:
+
+<pre><code>!!window.chrome && <b>(!!window.chrome.webstore || !! window.chrome.runtime);</b></code></pre>
+
+## Page 520
+
+Under "The Attr Type", the `nodeType` should be `2`.
+
 ## Page 522
 
 The text assignment should not use quotes:
@@ -408,6 +418,49 @@ catch (ex){
   <b>script.text = code;</b>
 }
 document.body.appendChild(script);
+</code></pre>
+
+## Page 537
+The text reads:
+
+> The `attributeOldValue` can be set to `true`
+
+It should read:
+
+> The `charactreDataOldValue` can be set to true  
+
+## Page 538
+
+The remove example is missing a call to `removeChild()`. It should read:
+
+<pre><code>
+...
+
+document.body.appendChild(document.createElement('div'));
+
+observer.observe(document.body, {childList: true});
+
+document.body.removeChild(document.body.firstChild);
+</code></pre>
+
+## Page 548
+
+The example reads:
+
+<pre><code>
+// Remove the class name if found
+if (idx > -1) {
+  classNames.splice(i, 1);
+}
+</code></pre>
+
+It should read:
+
+<pre><code>
+// Remove the class name if found
+if (idx > -1) {
+  classNames.splice(<b>idx</b>, 1);
+}
 </code></pre>
 
 ## Page 557
@@ -429,6 +482,10 @@ document.forms[0].scrollIntoView(true);
 // This attempts to scroll the element smoothly into view:
 <b>document.forms[0].scrollIntoView({behavior: 'smooth', block: 'start'});</b>
 </code></pre>
+
+## Page 587
+
+The first call to `nextNode()` returns the `<div>`, not the `<p>`
 
 ## Page 645
 
@@ -467,3 +524,5 @@ The second handler should have an `event` parameter:
   });
 })();
 </code></pre>
+
+
