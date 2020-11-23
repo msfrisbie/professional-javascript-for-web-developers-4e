@@ -525,4 +525,44 @@ The second handler should have an `event` parameter:
 })();
 </code></pre>
 
+## Page 652
 
+`if()` statement is missing an opening `{`
+
+## Page 728
+
+Typo in template literal interpolation. Should read `Selected index: ${selecteIndex}`
+
+## Page 735
+
+Code should read `div.contentEditable = "true";`
+
+## Page 751
+
+The iframe example domains are flipped. The page should read:
+
+> a page on `p2p.wrox.com` wants to communicate with a page from `www.wrox.com`
+
+## Page 761
+
+Missing letter in the code example. The example should read: `self.onmessage`
+
+## Page 762
+
+The code reads:
+`blob = blobSlice(files[0], 0, 32)`
+
+The code should read:
+`blob = files[0].slice(0, 32)`
+
+Further down the page, there is an unneeded declaration: `reader = new FileReader()` that is not used
+
+## Page 789
+
+The code is correct, but the variable naming convention is backwards. `endMark` and `startMark` should be refersed.
+
+## Page 804/805
+
+The `innerHTML` assingment is missing a closing `>`:
+
+<code><pre>document.body.innerHTML += `<x-foo></x-foo>`;</code></pre>
