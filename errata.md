@@ -566,3 +566,74 @@ The code is correct, but the variable naming convention is backwards. `endMark` 
 The `innerHTML` assingment is missing a closing `>`:
 
 <code><pre>document.body.innerHTML += `<x-foo></x-foo>`;</code></pre>
+
+## Page 815
+
+The generated `CryptoKey` will print to console with `extractable` set to `false`
+
+## Page 843
+
+The `console.log` shim example as-is will cause infinite recursion. A simple workaround is as follows:
+
+<pre><code>
+console._log = console.log;
+
+console.log = function() { 
+  const args = Array.prototype.slice.call(arguments);
+  console._log(args.join(', '));
+}
+</code></pre>
+
+## Page 854
+
+The first example should end:
+
+`element = result.iterateNext()`
+
+## Page 899
+
+The page should read:
+
+> Cloning a `Request` using either technique is not allowed if the `bodyUsed` property request property is `true`
+
+Therefore, the code example should read:
+
+`r.text();  // sets the bodyUsed field to true`
+
+## Page 905
+
+The page should read:
+
+> Cloning a `Response` is not allowed if the `bodyUsed` property request property is `true`
+
+Therefore, the code example should read:
+
+`r.text();  // sets the bodyUsed field to true`
+
+## Page 924
+
+The example using `CookieUtil.set()` should pass the `Date` as the third parameter, not the final
+
+## Page 927
+
+The code reads:
+
+`if (cookiePargs.length > 0)`
+
+It should read:
+
+`if (subcookieParts.length > 0)`
+
+## Page 964
+
+The import statement is missing a `from`, should read:
+
+`import foo, * as Foo from './foo.js';`
+
+## Page 965
+
+The line `import { baz } from './bar.js` should appear in `main.js`, not `bar.js`
+
+## Page 1050
+
+The text incorrectly indicates that accessing object properties is an O(N) operation. However, it is still a best practice to memoize nested property lookups.
