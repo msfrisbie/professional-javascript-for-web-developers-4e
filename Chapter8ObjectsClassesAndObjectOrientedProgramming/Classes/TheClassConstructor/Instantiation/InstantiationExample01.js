@@ -18,4 +18,3 @@ let p = new Person();  // person ctor
 
 let v = new Vegetable();
 console.log(v.color);  // orange
-ClassInstantiationExample01.js

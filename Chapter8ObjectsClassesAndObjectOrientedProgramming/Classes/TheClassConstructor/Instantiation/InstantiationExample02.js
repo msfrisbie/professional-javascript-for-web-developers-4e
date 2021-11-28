@@ -13,4 +13,3 @@ console.log(p2.name);         // null
 
 let p3 = new Person('Jake');  // 1
 console.log(p3.name);         // Jake 
-ClassInstantiationExample02.js

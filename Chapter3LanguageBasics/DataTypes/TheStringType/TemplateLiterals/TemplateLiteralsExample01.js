@@ -4,7 +4,7 @@ second line`;
 
 console.log(myMultiLineString);  
 // first line
-// second line"
+// second line
 
 console.log(myMultiLineTemplateLiteral);   
 // first line

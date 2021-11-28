@@ -14,4 +14,3 @@ let p = new Person();
 
 p.locate();                 // instance
 Person.prototype.locate();  // prototype
-InstanceMethodExample01.js

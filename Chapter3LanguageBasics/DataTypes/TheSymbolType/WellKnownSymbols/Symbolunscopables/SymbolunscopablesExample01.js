@@ -11,3 +11,5 @@ o[Symbol.unscopables] = {
 with (o) {
   console.log(foo);  // ReferenceError
 }
+
+// NOTE   It's not recommended to use with, so using Symbol.unscopables is also not recommended.

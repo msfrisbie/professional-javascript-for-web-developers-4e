@@ -16,5 +16,4 @@ let p = new Person();
 
 p.stringKey();    // invoked stringKey
 p[symbolKey]();   // invoked symbolKey
-p.computedKey();  // invoked computedKey 
-InstanceMethodExample02.js
+p.computedKey();  // invoked computedKey

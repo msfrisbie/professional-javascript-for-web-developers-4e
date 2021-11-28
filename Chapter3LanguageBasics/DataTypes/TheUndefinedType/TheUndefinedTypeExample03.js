@@ -5,4 +5,3 @@ let message;   // this variable is declared but has a value of undefined
            
 console.log(message);  // "undefined"
 console.log(age);      // causes an error
-UndefinedExample03.js

@@ -1,6 +1,7 @@
 // Unicode demo
 // \u00A9 is the copyright symbol
 console.log(`\u00A9`);            // ©
+console.log`\u00A9`;            // [ '©' ] - without parentheses using it as a template literal
 console.log(String.raw`\u00A9`);  // \u00A9
 
 // Newline demo
