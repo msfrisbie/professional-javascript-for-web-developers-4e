@@ -222,6 +222,22 @@ for (let value of <b>s2</b>.values()) {
 alert(valObj);            // <b>{id: "newVal"}</b>
 </pre></code>
 
+## Page 234
+
+Miss ')' of the for .. of .. in try ... catch ... block. Should be:
+
+try {
+  for (let i of counter2) {
+    if (i > 2) {
+      throw 'err';
+    }
+    console.log(i);
+  }
+} catch(e) {}
+// 1
+// 2
+// Exiting early
+
 ## Page 242
 
 The first code snippet instantiates an unused variable. It should read:
